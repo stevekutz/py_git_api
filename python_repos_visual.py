@@ -60,3 +60,4 @@ label_format = {
 # Create HTML
 figure = {'data': data_format, 'layout': label_format}
 offline.plot(figure, filename = 'python_repos.html')
+
