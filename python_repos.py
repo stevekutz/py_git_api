@@ -1,16 +1,18 @@
-import requests
+import requests  
 
 # Create API calll and store response
 url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
 headers = {'Accept': 'application/vnd.github.v3+json'}
-r = requests.get(url, headers=headers)
-print(f" Status code: {r.status_code}\n")
+res = requests.get(url, headers=headers)
+print(f" Status code: {res.status_code}\n")
+print(f' res  {res}')
 
-# store API response
-response_dict= r.json()
+# convert the API response data from JSON into a dictionary
+response_dict= res.json()
 
-# process dict info
+# veiw the response data
 print(response_dict.keys())
+print(f' response_dict {response_dict} ')
 print(f" Total Python repositories >> {response_dict['total_count']}")
 
 repo_dicts = response_dict['items']
